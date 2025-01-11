@@ -17,7 +17,7 @@
 - Replace the placeholders for the username and password with your credentials.
 - Open `dbConnection.js` and set up the default connection string.
   ```javascript
-  const mongoDB = "your-connection-string";
+  const mongoDB = "mongodb+srv://<db_username>:<db_password>@cluster0.hs5b0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
   ```
 
 ---
@@ -55,11 +55,6 @@ node app.js "shop"
 ```
 Then, verify the data by navigating to [http://localhost:3030/shop/articles](http://localhost:3030/shop/articles).
 
-
-
-
-
-
 ---
 ### 7. Handle CORS for Frontend Integration
 
@@ -76,6 +71,12 @@ app.use(cors({
 ### 8. Update Connection String
 
 Modify the connection string in `dbConnection.js` to include the database name (e.g., `shop`).
+
+  ```javascript
+  const mongoDB = "mongodb+srv://<db_username>:<db_password>@cluster0.hs5b0.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority&appName=Cluster0"
+  ```
+    
+
 
 ---
 
