@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
-import { getPosts, getPostById } from "./api";
+import { getPosts, getPostById, getProducts } from "./api";
 
 function App() {
   const [post, setPost] = useState(null);
@@ -22,6 +22,14 @@ function App() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await getProducts();
+      console.log(products);
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="App">
